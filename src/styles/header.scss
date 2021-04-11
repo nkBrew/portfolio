@@ -1,0 +1,65 @@
+@charset "utf-8";
+@import '~bulma/bulma.sass';
+@import '@fortawesome/fontawesome-free/css/all.css';
+// @import 'https://use.fontawesome.com/releases/v5.6.3/css/all.css';
+
+$media-grey: #929292;
+$media-white: #e4e4e4;
+
+.icon-text {
+  &:hover {
+    background-color: blue;
+    transition: 0.2s;
+  }
+}
+
+.media-link {
+  margin: 0.5rem;
+  color: $media-grey;
+  transition: 0.5s;
+  &:hover {
+    color: $media-white;
+  }
+}
+
+.contact-button {
+  background-color: blue;
+  border: none;
+}
+
+.animate-top {
+  animation-name: animate-top;
+  animation-duration: 0.4s;
+}
+
+@keyframes animate-top {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.navbar {
+  display: flex;
+  background-color: purple;
+}
+
+.foo {
+  background-color: black;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 100%;
+  }
+}
