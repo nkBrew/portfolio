@@ -1,10 +1,18 @@
 @charset "utf-8";
-@import '~bulma/bulma.sass';
+// @import '~bulma/bulma.sass';
+// I don't know if I like bulma
 @import '@fortawesome/fontawesome-free/css/all.css';
 // @import 'https://use.fontawesome.com/releases/v5.6.3/css/all.css';
 
 $media-grey: #929292;
 $media-white: #e4e4e4;
+$link-grey: #afb3c3;
+$link-white: #f3f3f3;
+
+.header {
+  height: 100vh;
+  background-color: pink;
+}
 
 .icon-text {
   &:hover {
@@ -24,6 +32,8 @@ $media-white: #e4e4e4;
 
 .contact-button {
   background-color: blue;
+  height: 50px;
+  width: 200px;
   border: none;
 }
 
@@ -32,7 +42,138 @@ $media-white: #e4e4e4;
   animation-duration: 0.4s;
 }
 
-@keyframes animate-top {
+.header-content {
+  margin: 0 auto;
+  width: 1200px;
+  height: 100vh;
+  background-color: red;
+}
+
+.header-body {
+}
+
+.navbar {
+  background-color: purple;
+  height: 70px;
+  position: fixed;
+  width: 100%;
+}
+
+.navbar-container {
+  height: 70px;
+  width: 100%;
+}
+
+.navbar-drop {
+  transform: translateY(-100px);
+  transition: all 1s ease;
+}
+
+.navbar-logo {
+  float: left;
+}
+
+.navbar-content {
+  padding-top: 30px;
+}
+
+.navbar-links {
+  list-style-type: none;
+  position: relative;
+  float: right;
+  margin-right: 50px;
+  padding: 0;
+  overflow: hidden;
+
+  li {
+    margin-left: 50px;
+    display: inline-block;
+    color: $link-grey;
+    text-align: center;
+    text-decoration: none;
+
+    a {
+      transition: 0.25s;
+      &:hover {
+        color: $link-white;
+        transition: 0.4s;
+      }
+    }
+  }
+}
+
+.underline {
+  position: relative;
+}
+
+.underline::after,
+.underline::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  left: auto;
+  width: 0;
+  height: 3px;
+  z-index: 2;
+}
+
+//After renders on top but its the first animation
+.underline::after {
+  transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
+  background: orange;
+}
+
+//Before renders underneath, but because of the delay its the second animation
+.underline::before {
+  transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
+  background-color: blue;
+}
+.underline:hover:before,
+.underline:hover:after {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+// I don't think the transition here does anything.
+// .underline:hover:before {
+//   width: 100%;
+//   right: auto;
+//   left: 0;
+//   transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
+// }
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  &.is-active {
+    display: block;
+  }
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
   from {
     top: -300px;
     opacity: 0;
@@ -43,23 +184,31 @@ $media-white: #e4e4e4;
   }
 }
 
-.navbar {
-  display: flex;
-  background-color: purple;
-}
-
-.foo {
-  background-color: black;
-  animation-duration: 3s;
-  animation-name: slidein;
-}
-
-@keyframes slidein {
-  from {
-    height: 0%;
-  }
-
-  to {
-    height: 100%;
+.mail-jiggle {
+  &:hover {
+    animation: animate-mail-jiggle 1s;
   }
 }
+
+@keyframes animate-mail-jiggle {
+  20% {
+    transform: rotate(30deg);
+  }
+  40% {
+    transform: rotate(-30deg);
+  }
+  60% {
+    transform: rotate(30deg);
+  }
+  80% {
+    transform: rotate(-30deg);
+  }
+}
+
+// li a {
+//   display: block;
+//   color: white;
+//   text-align: center;
+//   padding: 14px 16px;
+//   text-decoration: none;
+// }

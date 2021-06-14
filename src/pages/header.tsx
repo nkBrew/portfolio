@@ -6,17 +6,19 @@ import '../styles/header.scss';
 
 const Header = (): JSX.Element => {
   return (
-    <section className="hero is-danger is-fullheight">
+    <section className="header">
       <Navbar />
-      <div className="hero-body">
-        <div className="container has-text-centered">
-          <p className="title">Nicholas Brunoro</p>
-          <p className="subtitle">Software Engineer</p>
-          <div className="subtitle">
-            <MediaLinks />
+      <div className="header-content">
+        <div className="header-body">
+          <div className="container has-text-centered">
+            <p className="title">Nicholas Brunoro</p>
+            <p className="subtitle">Software Engineer</p>
+            <div className="subtitle">
+              <MediaLinks />
+            </div>
           </div>
+          <ContactModalButton />
         </div>
-        <ContactModalButton />
       </div>
     </section>
   );

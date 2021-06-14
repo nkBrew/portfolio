@@ -13,8 +13,8 @@ const ContactModal = ({ open, closeModal }: ContactModalProps): JSX.Element => {
 
   return (
     <div className={'modal ' + modalClassnames}>
-      <div className="modal-content animate-top">
-        <form className="box">
+      <div className="modal-content">
+        <form>
           <div className="close-contact" onClick={() => closeModal(false)}>
             <span className="contact-modal-close" aria-label="close">
               &times;
