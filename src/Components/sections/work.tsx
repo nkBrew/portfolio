@@ -1,14 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 // import sr from '@/utils/sr';
 // import sr from 'scrollreveal';
 
-const StyledWork = styled.div`
+const StyledWork = styled.div<{ inView: boolean }>`
   margin: auto;
   width: 90%;
   background: blue;
   height: 500px;
+  color: var(--light-grey);
+
+  opacity: 0;
+  ${({ inView }) =>
+    inView &&
+    css`
+      opacity: 1;
+      transition: 200ms;
+    `}
 `;
 
 const StyledWorkInner = styled.div`
@@ -25,17 +34,24 @@ const StyledTabButton = styled.button`
   margin: 0;
   padding: 0;
   width: 100%;
-  background: grey;
+  background: var(--dark-navy);
   display: flex;
   border: none;
-  border-left: 2px solid black;
+  border-left: 3px solid var(--slate);
   height: 50px;
   align-items: center;
   padding: 0 20px;
+  color: var(--light-grey);
 
   &:hover,
   &:focus {
-    background: yellow;
+    /* background: yellow; */
+    color: var(--orange);
+    transition: 300ms;
+  }
+
+  &:focus {
+    background-color: var(--light-slate);
   }
 `;
 
@@ -44,8 +60,8 @@ const StyledTabHighlight = styled.div<{ activeTab: number }>`
   top: 0;
   left: 0;
   height: 50px;
-  width: 5px;
-  background: green;
+  width: 3px;
+  background: var(--orange);
   border-radius: 2px;
   z-index: 10;
 
@@ -102,14 +118,16 @@ const workData = [
 
 const Work = () => {
   const styledWorkRef = useRef(null);
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({ triggerOnce: false });
   const [activeTab, setActiveTab] = useState(1);
 
   console.log(inView);
   const panelData = workData[activeTab];
+  const className = inView ? 'fade' : 'hide';
   return (
     <>
-      <StyledWork ref={ref}>
+      {/* <section className={className}> */}
+      <StyledWork ref={ref} inView={inView}>
         <h2>Work</h2>
         <StyledWorkInner>
           <StyledTabList>
@@ -145,6 +163,7 @@ const Work = () => {
           </StyledPanel>
         </StyledWorkInner>
       </StyledWork>
+      {/* </section> */}
     </>
   );
 };

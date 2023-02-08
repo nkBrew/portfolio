@@ -3,9 +3,12 @@ import Transitions from './transitions';
 
 const GlobalStyles = createGlobalStyle`
   :root{
-    --dark-navy: #020c1b;
+    --dark-navy: #112B3C;
     --navy-shadow: #06141d;
-    
+    --orange: #f66b0e;
+    --light-grey: #EFEFEF;
+    --slate: #6c7c8b;
+    --light-slate: #a7c0d7;
   }
 
   ${Transitions}
@@ -42,6 +45,15 @@ const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.secondary};
     border: 3px solid ${({ theme }) => theme.main};
     border-radius: 10px;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .fade {
+    opacity: 1;
+    transition: 500ms;
   }
 `;
 
