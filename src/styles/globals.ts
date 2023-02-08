@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import Transitions from './transitions';
 
 const GlobalStyles = createGlobalStyle`
   :root{
@@ -6,6 +7,8 @@ const GlobalStyles = createGlobalStyle`
     --navy-shadow: #06141d;
     
   }
+
+  ${Transitions}
   html, 
   body {
     max-width: 100vw;

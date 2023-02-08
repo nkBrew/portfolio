@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Hero from '@/Components/Hero/Hero';
 import Header from '@/Components/Header/Header';
 import Skills from '@/Components/sections/skills';
+import Work from '@/Components/sections/work';
 
 const Foobar = styled.div``;
 
@@ -16,6 +17,7 @@ export default function Home() {
     <>
       <Header />
       <Hero />
+      <Work />
       <Skills />
     </>
   );

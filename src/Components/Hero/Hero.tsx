@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -25,26 +25,11 @@ const Content = styled.div`
     color: ${({ theme }) => theme.quaternary};
     max-width: 300px;
   }
-
-  .fadeup-enter {
-    opacity: 0;
-  }
-
-  .fadeup-enter-active {
-    opacity: 1;
-    transition: opacity 500ms;
-  }
-  .fadeup-exit {
-    opacity: 1;
-  }
-  .fadeup-exit-active {
-    opacity: 0;
-    transition: opacity 500ms;
-  }
 `;
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const ref = useRef(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -54,8 +39,8 @@ const Hero = () => {
       <Content>
         <TransitionGroup>
           {isMounted && (
-            <CSSTransition timeout={5000} classNames="fadeup">
-              <div>
+            <CSSTransition timeout={5000} classNames="fadeup" nodeRef={ref}>
+              <div ref={ref}>
                 <h1>Nicholas Brunoro</h1>
 
                 {/* <h3>Full Stack Developer</h3> */}
