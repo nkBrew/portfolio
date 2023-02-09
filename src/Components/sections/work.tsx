@@ -33,6 +33,7 @@ const StyledTabButton = styled.button`
   align-items: center;
   padding: 0 20px;
   color: var(--light-grey);
+  cursor: pointer;
 
   &:hover,
   &:focus {

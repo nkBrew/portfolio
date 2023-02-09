@@ -47,8 +47,8 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrollAtTop(window.scrollY < 50);
+      console.log('***feafe*', window.scrollY);
     };
-    console.log('****', window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
