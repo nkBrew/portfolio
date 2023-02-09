@@ -1,11 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { CSSTransition } from 'react-transition-group';
-import styled, { css } from 'styled-components';
-// import sr from '@/utils/sr';
-// import sr from 'scrollreveal';
+import styled from 'styled-components';
 
-const StyledWork = styled.div`
+const StyledWork = styled.section`
   margin: auto;
   width: 90%;
   background: blue;
@@ -38,7 +36,6 @@ const StyledTabButton = styled.button`
 
   &:hover,
   &:focus {
-    /* background: yellow; */
     color: var(--orange);
     transition: 300ms;
   }
@@ -64,7 +61,6 @@ const StyledTabHighlight = styled.div<{ activeTab: number }>`
 
 const StyledPanel = styled.div`
   margin-left: 20px;
-  /* width: 500px; */
   h3 {
     margin-top: 0;
   }
@@ -115,11 +111,9 @@ const Work = () => {
   const [activeTab, setActiveTab] = useState(1);
 
   console.log(inView);
-  // const panelData = workData[activeTab];
   const className = !inView ? 'fadeup-enter' : 'fadeup-enter-active';
   return (
     <>
-      {/* <section className={className}> */}
       <StyledWork ref={ref} className={className}>
         <h2>Work</h2>
         <StyledWorkInner>
@@ -164,7 +158,6 @@ const Work = () => {
           ))}
         </StyledWorkInner>
       </StyledWork>
-      {/* </section> */}
     </>
   );
 };
