@@ -41,13 +41,14 @@ const StyledHeader = styled.header<StyledHeaderProps>`
 `;
 
 const Header = () => {
-  const scrollDir = useScrollDirection(ScrollDirection.DOWN);
+  const scrollDir = useScrollDirection(ScrollDirection.UP);
   const [scrollAtTop, setScrollAtTop] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollAtTop(window.scrollY < 50);
     };
+    console.log('****', window.scrollY);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

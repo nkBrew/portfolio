@@ -1,23 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { CSSTransition } from 'react-transition-group';
 import styled, { css } from 'styled-components';
 // import sr from '@/utils/sr';
 // import sr from 'scrollreveal';
 
-const StyledWork = styled.div<{ inView: boolean }>`
+const StyledWork = styled.div`
   margin: auto;
   width: 90%;
   background: blue;
   height: 500px;
   color: var(--light-grey);
-
-  opacity: 0;
-  ${({ inView }) =>
-    inView &&
-    css`
-      opacity: 1;
-      transition: 200ms;
-    `}
 `;
 
 const StyledWorkInner = styled.div`
@@ -118,16 +111,16 @@ const workData = [
 
 const Work = () => {
   const styledWorkRef = useRef(null);
-  const { ref, inView } = useInView({ triggerOnce: false });
+  const { ref, inView } = useInView({ triggerOnce: true });
   const [activeTab, setActiveTab] = useState(1);
 
   console.log(inView);
-  const panelData = workData[activeTab];
-  const className = inView ? 'fade' : 'hide';
+  // const panelData = workData[activeTab];
+  const className = !inView ? 'fadeup-enter' : 'fadeup-enter-active';
   return (
     <>
       {/* <section className={className}> */}
-      <StyledWork ref={ref} inView={inView}>
+      <StyledWork ref={ref} className={className}>
         <h2>Work</h2>
         <StyledWorkInner>
           <StyledTabList>
@@ -139,28 +132,36 @@ const Work = () => {
                 {data.tabTitle}
               </StyledTabButton>
             ))}
-            {/* <StyledTabButton onClick={() => setActiveTab(0)}>B</StyledTabButton> */}
-            {/* <StyledTabButton onClick={() => setActiveTab(1)}>C</StyledTabButton> */}
             <StyledTabHighlight activeTab={activeTab} />
           </StyledTabList>
-          <StyledPanel>
-            <h3>
-              <span>{panelData.title}</span>&nbsp;@&nbsp;
-              <span>
-                <a href={panelData.url} target="_blank" rel="noreferrer">
-                  {panelData.company}
-                </a>
-              </span>
-            </h3>
-            <p>{panelData.date}</p>
-            <div>
-              <ul>
-                {panelData.notes.map((note, j) => (
-                  <li key={`WorkDataNotes-${j}`}>{note}</li>
-                ))}
-              </ul>
-            </div>
-          </StyledPanel>
+          {workData.map((panelData, i) => (
+            <CSSTransition
+              key={`panel-${i}`}
+              ref={styledWorkRef}
+              classNames="fade"
+              timeout={1000}
+              in={activeTab === i}
+            >
+              <StyledPanel hidden={activeTab !== i}>
+                <h3>
+                  <span>{panelData.title}</span> {panelData.company && ' @ '}
+                  <span>
+                    <a href={panelData.url} target="_blank" rel="noreferrer">
+                      {panelData.company}
+                    </a>
+                  </span>
+                </h3>
+                <p>{panelData.date}</p>
+                <div>
+                  <ul>
+                    {panelData.notes.map((note, j) => (
+                      <li key={`WorkDataNotes-${j}`}>{note}</li>
+                    ))}
+                  </ul>
+                </div>
+              </StyledPanel>
+            </CSSTransition>
+          ))}
         </StyledWorkInner>
       </StyledWork>
       {/* </section> */}

@@ -9,6 +9,10 @@ const GlobalStyles = createGlobalStyle`
     --light-grey: #EFEFEF;
     --slate: #6c7c8b;
     --light-slate: #a7c0d7;
+    --fade-mixin: {
+      opacity: 1;
+      transition: opacity 700ms;
+    }
   }
 
   ${Transitions}
