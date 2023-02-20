@@ -4,10 +4,11 @@ import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 
 const StyledWork = styled.section`
-  margin: auto;
-  width: 90%;
-  background: blue;
+  /* margin: auto; */
+  width: 100%;
+  /* background: blue; */
   height: 500px;
+  /* marign-left:20px; */
   color: var(--light-grey);
 `;
 
@@ -116,7 +117,7 @@ const Work = () => {
   return (
     <>
       <StyledWork ref={ref} className={className}>
-        <h2>Work</h2>
+        <h2 className="section-heading">Work</h2>
         <StyledWorkInner>
           <StyledTabList>
             {workData.map((data, i) => (

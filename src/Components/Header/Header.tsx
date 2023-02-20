@@ -20,6 +20,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
   justify-content: space-between;
   color: white;
   transition: 200ms;
+  z-index: 50;
 
   ${(props) =>
     props.scrollDir === ScrollDirection.UP &&

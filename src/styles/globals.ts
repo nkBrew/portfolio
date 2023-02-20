@@ -34,6 +34,10 @@ const GlobalStyles = createGlobalStyle`
     color: var(--light-grey)
   }
 
+  main {
+    padding: 0 80px;
+  }
+
   h1,
   h2,
   h3,
@@ -58,6 +62,57 @@ const GlobalStyles = createGlobalStyle`
     list-style-type: none;
   }
 
+  .section-heading {
+    display:flex;
+    align-items: center;
+
+    &:before {
+      content:'checkout';
+      color: var(--orange);
+      font-size: 1rem;
+      align-self:flex-end;
+      position:relative;
+      bottom: 5px;
+      margin-right:10px;
+    }
+    &:after {
+      content:'';
+      margin-left: 20px;
+      display:block;
+      position:relative;
+      /* top:-5px; */
+      width:300px;
+      height: 2px;
+      background: var(--light-slate);
+    }
+  }
+
+  .inline-link {
+    color: var(--orange);
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+
+    &:hover,
+    &:active,
+    &:focus {
+        ::after{  
+          width:100%;
+        }
+    }
+    &:after {
+      content:'';
+      position: absolute;
+      width:0;
+      height:2px;
+      bottom:0;
+      left:0;
+      background:var(--orange);
+      transition: 200ms;
+
+    }
+  
+  }
 
   /* Scrollbar */
   ::-webkit-scrollbar {
@@ -65,7 +120,7 @@ const GlobalStyles = createGlobalStyle`
     width: 13px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--dark-navy)};
+    background: var(--dark-navy);
     /* background: red; */
   }
   ::-webkit-scrollbar-thumb {

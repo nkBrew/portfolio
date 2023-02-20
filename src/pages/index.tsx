@@ -9,17 +9,29 @@ import Skills from '@/Components/sections/skills';
 import Work from '@/Components/sections/work';
 import Education from '@/Components/sections/education';
 import Projects from '@/Components/sections/projects';
+import About from '@/Components/sections/About';
+import StyledRevealSection from '@/Components/sections/StyledRevealSection';
+import Layout from '@/Components/layout';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const StyledMain = styled.main``;
 
 export default function Home() {
   return (
     <>
       <Header />
-      <Hero />
-      <Work />
-      <Projects />
-      <Education />
+      <StyledMain>
+        <Layout>
+          <Hero />
+          <StyledRevealSection>
+            <About />
+          </StyledRevealSection>
+          <Work />
+          <Projects />
+          <Education />
+        </Layout>
+      </StyledMain>
       {/* <Skills /> */}
     </>
   );
