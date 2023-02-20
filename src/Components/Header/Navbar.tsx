@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const StyledNavbar = styled.div`
   display: flex;
   padding: 0 20px;
-  color: white;
   ul {
     /* padding: 0; */
     /* width: 80%; */
@@ -13,6 +12,7 @@ const StyledNavbar = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 400px;
+    color: var(--light-grey);
   }
 
   li {

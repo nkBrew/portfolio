@@ -8,8 +8,7 @@ import Header from '@/Components/Header/Header';
 import Skills from '@/Components/sections/skills';
 import Work from '@/Components/sections/work';
 import Education from '@/Components/sections/education';
-
-const Foobar = styled.div``;
+import Projects from '@/Components/sections/projects';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,8 +18,9 @@ export default function Home() {
       <Header />
       <Hero />
       <Work />
+      <Projects />
       <Education />
-      <Skills />
+      {/* <Skills /> */}
     </>
   );
 }

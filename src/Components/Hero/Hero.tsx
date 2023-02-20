@@ -22,7 +22,6 @@ const Content = styled.div`
   }
 
   p {
-    color: ${({ theme }) => theme.quaternary};
     max-width: 300px;
   }
 `;

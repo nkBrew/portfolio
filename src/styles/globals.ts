@@ -3,10 +3,12 @@ import Transitions from './transitions';
 
 const GlobalStyles = createGlobalStyle`
   :root{
-    --dark-navy: #112B3C;
+    --dark-navy: #111827;
+    --navy: #212f4d;
     --navy-shadow: #06141d;
     --orange: #f66b0e;
-    --light-grey: #EFEFEF;
+    --light-grey: #d1d5db;
+    --grey: #9ca3af;
     --slate: #6c7c8b;
     --light-slate: #a7c0d7;
     --fade-mixin: {
@@ -14,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
       transition: opacity 700ms;
     }
   }
+
 
   ${Transitions}
   html, 
@@ -23,10 +26,23 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme.main};
+    /* background: ${(props) => props.theme.main}; */
+    background: var(--dark-navy);
     margin:0;
     font-size: 25px;
     min-height: 100%;
+    color: var(--light-grey)
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,h5,h6 {
+    color: var(--light-slate)
+  }
+
+  p {
+    color: var(--grey)
   }
 
   a {
@@ -37,17 +53,24 @@ const GlobalStyles = createGlobalStyle`
     scrollbar-width:thin;
     scrollbar-color: red blue;
   }
+
+  ul {
+    list-style-type: none;
+  }
+
+
+  /* Scrollbar */
   ::-webkit-scrollbar {
     /* background: white; */
     width: 13px;
   }
   ::-webkit-scrollbar-track {
-    background: ${({ theme }) => theme.main};
+    background: var(--dark-navy)};
     /* background: red; */
   }
   ::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.secondary};
-    border: 3px solid ${({ theme }) => theme.main};
+    border: 3px solid var(--dark-navy);
     border-radius: 10px;
   }
 
@@ -59,6 +82,8 @@ const GlobalStyles = createGlobalStyle`
     opacity: 1;
     transition: 500ms;
   }
+
+ 
 `;
 
 export default GlobalStyles;

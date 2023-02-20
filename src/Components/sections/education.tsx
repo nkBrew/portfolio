@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const StyledEducationSection = styled.section`
   margin: auto;
   max-width: 900px;
-  background: green;
+  /* background: green; */
 `;
 
 const StyledEducationInner = styled.div`
@@ -14,13 +14,16 @@ const StyledEducationInner = styled.div`
 `;
 
 const StyledEducationPanel = styled.div`
-  background: red;
+  /* background: red; */
   width: 80%;
   h3 {
     margin-bottom: 0;
   }
   h4 {
     margin-top: 0;
+  }
+  ul {
+    list-style: circle;
   }
 `;
 

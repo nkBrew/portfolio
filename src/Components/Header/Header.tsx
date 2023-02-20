@@ -15,7 +15,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
   position: fixed;
   width: 100%;
   height: 100px;
-  background: ${({ theme }) => theme.main};
+  background: var(--dark-navy);
   display: flex;
   justify-content: space-between;
   color: white;
