@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Email from './email';
+import Socials from './socials';
 
 const StyledContent = styled.div`
   display: flex;
@@ -13,7 +15,11 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <StyledContent>{children}</StyledContent>
+      <StyledContent>
+        <Socials />
+        <Email />
+        {children}
+      </StyledContent>
     </>
   );
 };

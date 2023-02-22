@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     --navy: #212f4d;
     --navy-shadow: #06141d;
     --orange: #f66b0e;
+    --light-orange: #ff9e0e;
     --light-grey: #d1d5db;
     --grey: #9ca3af;
     --slate: #6c7c8b;
@@ -59,7 +60,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ul {
+    margin: 0;
     list-style-type: none;
+    padding:0;
   }
 
   .section-heading {
@@ -88,7 +91,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .inline-link {
-    color: var(--orange);
+    color: var(--light-orange);
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -107,7 +110,7 @@ const GlobalStyles = createGlobalStyle`
       height:2px;
       bottom:0;
       left:0;
-      background:var(--orange);
+      background:var(--light-orange);
       transition: 200ms;
 
     }
