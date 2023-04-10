@@ -12,10 +12,14 @@ import Projects from '@/Components/sections/projects';
 import About from '@/Components/sections/About';
 import StyledRevealSection from '@/Components/sections/StyledRevealSection';
 import Layout from '@/Components/layout';
+import Contact from '@/Components/sections/contact';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const StyledMain = styled.main``;
+const StyledMain = styled.main`
+  display: flex;
+  justify-content: center;
+`;
 
 export default function Home() {
   return (
@@ -30,6 +34,7 @@ export default function Home() {
           <Work />
           <Projects />
           <Education />
+          <Contact />
         </Layout>
       </StyledMain>
       {/* <Skills /> */}

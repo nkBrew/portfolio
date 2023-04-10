@@ -30,7 +30,7 @@ const StyledEmail = styled.div`
 const Email = () => {
   return (
     <StyledEmail>
-      <a>nicholasjwb@gmail.com</a>
+      <a href="mailto:nicholasjwb@gmail.com">nicholasjwb@gmail.com</a>
     </StyledEmail>
   );
 };

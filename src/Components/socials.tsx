@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import { FiCodepen, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
 
 const StyledSocials = styled.div`
   position: fixed;
@@ -46,18 +46,23 @@ const Socials = () => {
     <StyledSocials>
       <ul>
         <li>
-          <a>
+          <a href="https://github.com/nkbrew">
             <FiGithub />
           </a>
         </li>
         <li>
-          <a>
+          <a href="https://www.linkedin.com/in/nicholasjwb/">
             <FiLinkedin />
           </a>
         </li>
         <li>
-          <a>
+          <a href="https://www.instagram.com/nick.knacked/">
             <FiInstagram />
+          </a>
+        </li>
+        <li>
+          <a href="https://codepen.io/nkbrew">
+            <FiCodepen />
           </a>
         </li>
       </ul>

@@ -15,12 +15,14 @@ const StyledHeader = styled.header<StyledHeaderProps>`
   position: fixed;
   width: 100%;
   height: 100px;
-  background: var(--dark-navy);
+  /* background: var(--dark-navy); */
+  background: rgba(17, 24, 39, 0.85);
   display: flex;
   justify-content: space-between;
   color: white;
   transition: 200ms;
   z-index: 50;
+  backdrop-filter: blur(10px);
 
   ${(props) =>
     props.scrollDir === ScrollDirection.UP &&

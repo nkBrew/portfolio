@@ -6,6 +6,9 @@ import Socials from './socials';
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 800px;
+  /* justify-content: center; */
+  align-items: center;
 `;
 
 interface LayoutProps {
