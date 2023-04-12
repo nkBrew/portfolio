@@ -5,12 +5,17 @@ import styled from 'styled-components';
 
 const StyledEducationSection = styled.section`
   margin: auto;
-  max-width: 900px;
+  width: 100%;
   /* background: green; */
 `;
 
 const StyledEducationInner = styled.div`
+  width: 100%;
   display: flex;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const StyledEducationPanel = styled.div`
@@ -24,6 +29,10 @@ const StyledEducationPanel = styled.div`
   }
   ul {
     list-style: circle;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
   }
 `;
 
@@ -39,6 +48,11 @@ const StyledImageWrapper = styled.div`
       transition: 200ms;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    margin-top: 20px;
+    align-self: center;
+  }
 `;
 
 const Education = () => {
@@ -49,7 +63,7 @@ const Education = () => {
       <StyledEducationSection id="education" ref={ref} className={className}>
         <StyledEducationInner>
           <StyledEducationPanel>
-            <h2>Education</h2>
+            <h2 className="section-heading">Education</h2>
             <h3>University of Saskatchewan</h3>
             <h4>B.S. in Computer Science</h4>
             <ul>

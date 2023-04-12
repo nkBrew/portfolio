@@ -19,17 +19,16 @@ const StyledEmail = styled.div`
       width: 15px;
       height: 15px;
     }
-    &:hover,
-    &:focus {
-      transform: translateY(-5px);
-      color: var(--light-orange);
-    }
+  }
+
+  @media screen and (max-width: 600px) {
+    display: none;
   }
 `;
 
 const Email = () => {
   return (
-    <StyledEmail>
+    <StyledEmail className="social-link-pop">
       <a href="mailto:nicholasjwb@gmail.com">nicholasjwb@gmail.com</a>
     </StyledEmail>
   );

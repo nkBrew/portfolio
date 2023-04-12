@@ -10,61 +10,126 @@ const StyledWork = styled.section`
   height: 500px;
   /* marign-left:20px; */
   color: var(--light-grey);
+
+  @media screen and (max-width: 600px) {
+    height: 600px;
+  }
 `;
 
 const StyledWorkInner = styled.div`
   display: flex;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const StyledTabList = styled.div`
   position: relative;
   width: 200px;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    height: 200px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: fit-content;
+    flex-direction: row;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    flex-direction: row;
+  }
 `;
 
 const StyledTabButton = styled.button`
   margin: 0;
-  padding: 0;
   width: 100%;
   background: var(--dark-navy);
   display: flex;
   border: none;
-  border-left: 3px solid var(--slate);
   height: 50px;
   align-items: center;
   padding: 0 20px;
   color: var(--light-grey);
   cursor: pointer;
+  border-left: 3px solid var(--slate);
 
-  &:hover,
-  &:focus {
-    color: var(--orange);
-    transition: 300ms;
+  flex: 1;
+
+  @media screen and (max-width: 768px) {
+    border-bottom: 3px solid var(--slate);
+    border-left: none;
+    padding: 0;
+    /* margin: 0 20px; */
+    &:hover,
+    &:focus {
+      color: var(--orange);
+      transition: 300ms;
+    }
+
+    &:focus {
+      background-color: var(--light-slate);
+    }
   }
 
-  &:focus {
-    background-color: var(--light-slate);
+  @media screen and (max-width: 600px) {
+    justify-content: center;
+    /* justify-content: space-between; */
+    /* flex: 1; */
   }
 `;
 
 const StyledTabHighlight = styled.div<{ activeTab: number }>`
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
+  height: 66px;
   width: 3px;
   background: var(--orange);
   border-radius: 2px;
   z-index: 10;
 
-  transform: translateY(calc(${({ activeTab }) => activeTab}*50px));
   transition: 200ms;
+
+  @media screen and (min-width: 600px) {
+    top: 0;
+    left: 0;
+    transform: translateY(calc(${({ activeTab }) => activeTab}*70px));
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    width: 134px;
+    /* right: 0; */
+    transform: translateX(calc(${({ activeTab }) => activeTab}*133px));
+  }
 `;
 
 const StyledPanel = styled.div`
   margin-left: 20px;
+  overflow-y: auto;
+  max-height: 400px;
+  overflow-x: hidden;
   h3 {
     margin-top: 0;
+  }
+  ul {
+    padding-left: 30px;
+    list-style: disc;
+  }
+
+  /* a { */
+  overflow-wrap: break-word;
+  /* } */
+
+  @media screen and (max-width: 600px) {
+    margin-top: 20px;
+    margin-left: 0;
+    height: 400px;
   }
 `;
 
@@ -88,7 +153,7 @@ const workData = [
     notes: [
       `Maintained the Backend Delivery Logic systems and algorithms for the Dispatch & Logistics team`,
       `Introduced new Cache systems with Redis to speed up system performance`,
-      `Brought up new microservices with a modern and automattic approach on AWS via Terraform`,
+      `Developed and Implemented new microservices with a modern and automattic approach on AWS via Terraform`,
       `Introduced a feature that allowed the viewing and parsing for Delivery and Courier analytics via Elastic Search`,
     ],
   },

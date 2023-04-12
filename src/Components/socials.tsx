@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FiCodepen, FiGithub, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import socialLinks from './socialLinks';
 
 const StyledSocials = styled.div`
   position: fixed;
@@ -18,16 +19,9 @@ const StyledSocials = styled.div`
     a {
       padding: 5px;
       display: inline-block;
-      cursor: pointer;
-      transition: 200ms;
       svg {
         width: 15px;
         height: 15px;
-      }
-      &:hover,
-      &:focus {
-        transform: translateY(-3px);
-        color: var(--light-orange);
       }
     }
   }
@@ -39,32 +33,21 @@ const StyledSocials = styled.div`
     flex-grow: 1;
     background: white;
   }
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const Socials = () => {
   return (
     <StyledSocials>
       <ul>
-        <li>
-          <a href="https://github.com/nkbrew">
-            <FiGithub />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/nicholasjwb/">
-            <FiLinkedin />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/nick.knacked/">
-            <FiInstagram />
-          </a>
-        </li>
-        <li>
-          <a href="https://codepen.io/nkbrew">
-            <FiCodepen />
-          </a>
-        </li>
+        {socialLinks.map((sl, i) => (
+          <li className="social-link-pop" key={`sl-${i}`}>
+            <a href={sl.url}>{sl.svg}</a>
+          </li>
+        ))}
       </ul>
     </StyledSocials>
   );

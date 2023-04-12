@@ -13,11 +13,20 @@ const StyledProjectsSection = styled.section`
 const StyledProjectsInner = styled.div``;
 
 const StyledProject = styled.li`
-  display: flex;
+  /* display: flex; */
   list-style: none;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   height: 400px;
+  grid-template-rows: repeat(2, 1fr);
+
+  @media screen and (max-width: 600px) {
+    padding: 10px 0;
+    background: var(--navy);
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+  }
 `;
 
 const StyledProjectContent = styled.div`
@@ -40,6 +49,26 @@ const StyledProjectContent = styled.div`
       transition: 200ms;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+
+    text-align: center;
+
+    h3,
+    p {
+      margin: 0;
+    }
+    .project-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > * {
+        padding: 5px 15px 0;
+      }
+    }
+  }
 `;
 
 const StyledProjectImage = styled.div`
@@ -53,6 +82,11 @@ const StyledProjectImage = styled.div`
     img {
       object-fit: contain;
     }
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-column: 1/-1;
+    grid-row: -2/-1;
   }
 `;
 
@@ -71,14 +105,20 @@ const ProjectData = [
     Although I struggled with it, is making the webapp responsive. It still has some problems, 
     especially with the modal, but I learned alot. I'd like to fix it someday.
     `,
-    img: '',
+    img: '/PathfinderVisualizer.png',
     gif: '',
     stack: 'React Typescript SASS',
+  },
+  {
+    title: 'Not Another Chat App',
+    gitUrl: 'https://github.com/nkBrew/not_another_chat_app',
+    demoUrl: 'https://not-another-chat-app-client.vercel.app/',
+    description: `1A real time chat application I built to show off my full stack capabilities and learn MERN Stack, sockets, and tailwind`,
+    img: '/PathfinderVisualizer.png',
   },
 ];
 
 const Projects = () => {
-  const projectData = ProjectData[0];
   return (
     <>
       <StyledProjectsSection>
@@ -87,27 +127,29 @@ const Projects = () => {
             <span className="checkout">checkout</span> Projects
           </h2>
           <ul>
-            <StyledProject>
-              <StyledProjectContent>
-                <h3>Pathfinder Visualizer</h3>
-                <div className={'project-content-description'}>
-                  <p>{projectData.description}</p>
-                </div>
-                <div>
-                  <a href={projectData.gitUrl}>
-                    <FiGithub />
-                  </a>
-                  <a href={projectData.demoUrl}>
-                    <FiExternalLink />
-                  </a>
-                </div>
-              </StyledProjectContent>
-              <StyledProjectImage>
-                <div>
-                  <Image src="/PathfinderVisualizer.png" fill alt=""></Image>
-                </div>
-              </StyledProjectImage>
-            </StyledProject>
+            {ProjectData.map((project, i) => (
+              <StyledProject key={`project-${i}`}>
+                <StyledProjectContent>
+                  <h3>{project.title}</h3>
+                  <div className={'project-content-description'}>
+                    <p>{project.description}</p>
+                  </div>
+                  <div className="project-links">
+                    <a href={project.gitUrl}>
+                      <FiGithub />
+                    </a>
+                    <a href={project.demoUrl}>
+                      <FiExternalLink />
+                    </a>
+                  </div>
+                </StyledProjectContent>
+                <StyledProjectImage>
+                  <div>
+                    <Image src={project.img} fill alt=""></Image>
+                  </div>
+                </StyledProjectImage>
+              </StyledProject>
+            ))}
           </ul>
         </StyledProjectsInner>
       </StyledProjectsSection>

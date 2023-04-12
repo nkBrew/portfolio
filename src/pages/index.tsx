@@ -13,6 +13,7 @@ import About from '@/Components/sections/About';
 import StyledRevealSection from '@/Components/sections/StyledRevealSection';
 import Layout from '@/Components/layout';
 import Contact from '@/Components/sections/contact';
+import Footer from '@/Components/sections/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -37,6 +38,8 @@ export default function Home() {
           <Contact />
         </Layout>
       </StyledMain>
+      <Footer />
+
       {/* <Skills /> */}
     </>
   );

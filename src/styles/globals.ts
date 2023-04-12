@@ -35,9 +35,9 @@ const GlobalStyles = createGlobalStyle`
     color: var(--light-grey)
   }
 
-  main {
+  /* main {
     padding: 0 80px;
-  }
+  } */
 
   h1,
   h2,
@@ -114,7 +114,15 @@ const GlobalStyles = createGlobalStyle`
       transition: 200ms;
 
     }
-  
+  }
+
+  .social-link-pop {
+    transition:200ms;
+    &:hover,
+    &:focus {
+      transform: translateY(-3px);
+      color: var(--light-orange);
+    }
   }
 
   /* Scrollbar */
@@ -141,6 +149,15 @@ const GlobalStyles = createGlobalStyle`
     transition: 500ms;
   }
 
+  @media screen and (max-width: 768px){
+    .section-heading {
+      &:after{
+        flex:1;
+
+      }
+    }
+    
+  }
  
 `;
 
