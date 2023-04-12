@@ -1,4 +1,11 @@
-import Document, { DocumentContext } from 'next/document';
+import useMenuStore from '@/stores/menuStore';
+import Document, {
+  DocumentContext,
+  Html,
+  Head,
+  Main,
+  NextScript,
+} from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -22,4 +29,18 @@ export default class MyDocument extends Document {
       sheet.seal();
     }
   }
+  // render() {
+  //   const { show } = useMenuStore.getState();
+  //   const className = show ? 'no-scroll' : '';
+  //   console.log('show', show);
+  //   return (
+  //     <Html>
+  //       <Head />
+  //       <body className={className}>
+  //         <Main />
+  //         <NextScript />
+  //       </body>
+  //     </Html>
+  //   );
+  // }
 }

@@ -181,7 +181,7 @@ const Work = () => {
   const className = !inView ? 'fadeup-enter' : 'fadeup-enter-active';
   return (
     <>
-      <StyledWork ref={ref} className={className}>
+      <StyledWork ref={ref} className={className} id="work">
         <h2 className="section-heading">Work</h2>
         <StyledWorkInner>
           <StyledTabList>

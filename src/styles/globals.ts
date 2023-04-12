@@ -20,10 +20,17 @@ const GlobalStyles = createGlobalStyle`
 
 
   ${Transitions}
+  
   html, 
   body {
     max-width: 100vw;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .no-scroll {
+    height:100vh;
+    overflow: hidden;
   }
 
   body {

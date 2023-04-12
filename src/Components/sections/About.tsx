@@ -18,7 +18,7 @@ for 3 years, and would like to try new things and meet amazing new people to lea
 const About = () => {
   return (
     <>
-      <StyledAboutSection>
+      <StyledAboutSection id="about">
         <h2 className={'section-heading'}>About Myself</h2>
         <p>{whatToSay}</p>
         <p>{whatToSay2}</p>
@@ -26,7 +26,9 @@ const About = () => {
           Feel free to
           <span>
             {' '}
-            <a className="inline-link">reach out</a>{' '}
+            <a className="inline-link" href="#contact">
+              reach out
+            </a>{' '}
           </span>
           to me to discuss the oppurtinity of working together, ask me a
           question, or simply have a chat!

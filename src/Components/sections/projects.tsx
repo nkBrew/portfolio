@@ -50,6 +50,16 @@ const StyledProjectContent = styled.div`
     }
   }
 
+  p {
+    margin-bottom: 10px;
+  }
+
+  .project-links {
+    > * {
+      padding: 5px 15px;
+    }
+  }
+
   @media screen and (max-width: 600px) {
     grid-column: 1/-1;
     grid-row: 1/2;
@@ -72,7 +82,7 @@ const StyledProjectContent = styled.div`
 `;
 
 const StyledProjectImage = styled.div`
-  grid-column: 1 / 7;
+  grid-column: 1 / 8;
   grid-row: 1/-1;
 
   div {
@@ -114,18 +124,16 @@ const ProjectData = [
     gitUrl: 'https://github.com/nkBrew/not_another_chat_app',
     demoUrl: 'https://not-another-chat-app-client.vercel.app/',
     description: `1A real time chat application I built to show off my full stack capabilities and learn MERN Stack, sockets, and tailwind`,
-    img: '/PathfinderVisualizer.png',
+    img: '/not-another-chat-app.png',
   },
 ];
 
 const Projects = () => {
   return (
     <>
-      <StyledProjectsSection>
+      <StyledProjectsSection id="projects">
         <StyledProjectsInner>
-          <h2>
-            <span className="checkout">checkout</span> Projects
-          </h2>
+          <h2 className="section-heading">Projects</h2>
           <ul>
             {ProjectData.map((project, i) => (
               <StyledProject key={`project-${i}`}>

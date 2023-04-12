@@ -1,4 +1,4 @@
-import React, { FormEvent, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 
@@ -46,7 +46,7 @@ const StyledForm = styled.form`
   }
 
   input {
-    width: 50%;
+    width: 80%;
   }
 
   textarea {
@@ -129,7 +129,7 @@ const Contact = () => {
 
   return (
     <>
-      <StyledContactSection>
+      <StyledContactSection id="contact">
         <h2 className="section-heading">Contact Me!</h2>
         <StyledContainer>
           <StyledContent>
