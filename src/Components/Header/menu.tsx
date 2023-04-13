@@ -18,7 +18,20 @@ const StyledMenu = styled.div<{ show: boolean }>`
       height: 40px;
     }
   }
+  .li-pdf {
+    a {
+      padding: 5px 10px;
+      border: solid 2px var(--light-orange);
+      border-radius: 10px;
+      background-color: var(--orange-opaque);
+    }
+    a:hover {
+      /* background: none; */
+      color: var(--light-orange);
 
+      color: inherit;
+    }
+  }
   @media screen and (min-width: 600px) {
     display: none;
   }

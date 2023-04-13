@@ -8,6 +8,8 @@ const GlobalStyles = createGlobalStyle`
     --navy-shadow: #06141d;
     --orange: #f66b0e;
     --light-orange: #ff9e0e;
+    --orange-opaque: rgb(228, 108, 45, .2);
+    --soft-orange: #dbbca8;
     --light-grey: #d1d5db;
     --grey: #9ca3af;
     --slate: #6c7c8b;

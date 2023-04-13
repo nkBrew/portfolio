@@ -32,6 +32,20 @@ const StyledLinks = styled.ul`
     transition: 300ms;
   }
 
+  .li-pdf {
+    a {
+      padding: 3px 8px;
+      border: solid 2px var(--light-orange);
+      border-radius: 10px;
+      background-color: var(--orange-opaque);
+    }
+    a:hover {
+      /* background: none; */
+      color: var(--light-orange);
+
+      color: inherit;
+    }
+  }
   @media screen and (max-width: 600px) {
     display: none;
   }

@@ -8,14 +8,23 @@ const Container = styled.div`
   justify-content: center;
   align-self: flex-start;
   /* padding: 0 100px; */
+  width: 100%;
   height: 100vh;
 `;
 
 const Content = styled.div`
+  .inner-wrapper {
+    width: 100%;
+  }
+
   h1 {
-    margin: 0 0 20px;
+    margin: 0;
     color: ${({ theme }) => theme.tertiary};
     /* font-size: 50px; */
+  }
+
+  .job-title {
+    color: var(--light-orange);
   }
 
   h3 {
@@ -23,7 +32,11 @@ const Content = styled.div`
   }
 
   p {
-    max-width: 300px;
+    max-width: 600px;
+  }
+
+  .greet {
+    color: var(--light-slate);
   }
 `;
 
@@ -40,22 +53,16 @@ const Hero = () => {
         <TransitionGroup>
           {isMounted && (
             <CSSTransition timeout={5000} classNames="fadeup" nodeRef={ref}>
-              <div ref={ref}>
+              <div className="inner-wrapper" ref={ref}>
+                <p className="greet">Hi, my name is</p>
                 <h1>Nicholas Brunoro</h1>
-
-                {/* <h3>Full Stack Developer</h3> */}
+                <h1 className="job-title">Software Engineer</h1>
                 <p>
-                  {' '}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                  a ex voluptatum distinctio, soluta eligendi exercitationem
-                  aspernatur error quas, vitae asperiores cum doloremque ducimus
-                  omnis porro, quaerat nobis! Cum, fugit.
+                  {`I'm a software engineer aspring on turning ideas into 
+                reality through coding and design. I am currently seeking my next
+                oppurtunity to create something spectacular with wonderful people!`}
                 </p>
               </div>
-              {/* <p>
-              {`I'm a Full Stack Web Developer with 3 working and 9 years total of
-          experience. I love to code and solve new problems.`}
-            </p> */}
             </CSSTransition>
           )}
         </TransitionGroup>

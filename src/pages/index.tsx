@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
+import { Source_Code_Pro } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
 import styled, { css } from 'styled-components';
 import Hero from '@/Components/Hero/Hero';
@@ -16,7 +16,9 @@ import Contact from '@/Components/sections/contact';
 import Footer from '@/Components/sections/footer';
 import useMenuStore from '@/stores/menuStore';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
+
+const sourceCodePro = Source_Code_Pro({ subsets: ['latin'] });
 
 const StyledMain = styled.main<{ menuShowing: boolean }>`
   display: flex;
@@ -31,12 +33,19 @@ const StyledMain = styled.main<{ menuShowing: boolean }>`
 `;
 
 export default function Home() {
-  const { show } = useMenuStore((state) => state);
+  const { show, toggleShow } = useMenuStore((state) => state);
   console.log(show);
+
+  const handleOnClick = () => {
+    if (show) {
+      toggleShow();
+    }
+  };
+
   return (
-    <>
+    <div className={sourceCodePro.className}>
       <Header />
-      <StyledMain menuShowing={show}>
+      <StyledMain menuShowing={show} onClick={handleOnClick}>
         <Layout>
           <Hero />
           <StyledRevealSection>
@@ -57,6 +66,6 @@ export default function Home() {
       <Footer />
 
       {/* <Skills /> */}
-    </>
+    </div>
   );
 }
