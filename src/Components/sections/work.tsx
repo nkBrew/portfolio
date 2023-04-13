@@ -154,7 +154,7 @@ const workData = [
       `Maintained the Backend Delivery Logic systems and algorithms for the Dispatch & Logistics team`,
       `Introduced new Cache systems with Redis to speed up system performance`,
       `Developed and Implemented new microservices with a modern and automattic approach on AWS via Terraform`,
-      `Introduced a feature that allowed the viewing and parsing for Delivery and Courier analytics via Elastic Search`,
+      `Introduced a feature that allowed the viewing and parsing for Delivery and Courier analytics through Elastic Search`,
     ],
   },
   {
@@ -167,7 +167,7 @@ const workData = [
       `Implemented numerous features for the Courier Acquisition team including Courier Documents, and Bag Ordering & Fulfillment, as well as the company's internal system to maintain and view these features`,
       `Contributed to the maintanence of code issues on the front and back end systems`,
       `Collaborated with team members locally and remotely`,
-      `Proposed and planned a transition from Javascript to Typescript for the Courier Acquisition Landing Page`,
+      `Proposed and planned a transition from Javascript to Typescript for the Courier Acquisition Onboarding Site`,
     ],
   },
 ];

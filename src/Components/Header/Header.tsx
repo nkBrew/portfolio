@@ -19,7 +19,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
   background: rgba(17, 24, 39, 0.85);
   display: flex;
   justify-content: space-between;
-  color: white;
+  color: var(--light-grey);
   transition: 200ms;
   z-index: 50;
   backdrop-filter: blur(10px);

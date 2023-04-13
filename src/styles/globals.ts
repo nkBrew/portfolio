@@ -134,6 +134,18 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .li-pdf {
+    a {
+      padding: 3px 8px;
+      border: solid 2px var(--light-orange);
+      border-radius: 10px;
+      color: var(--light-grey);
+    }
+    a:hover {
+      background-color: var(--orange-opaque);
+
+    }
+  }
   /* Scrollbar */
   ::-webkit-scrollbar {
     /* background: white; */
