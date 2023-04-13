@@ -43,9 +43,15 @@ export default function Home() {
             <About />
           </StyledRevealSection>
           <Work />
-          <Projects />
-          <Education />
-          <Contact />
+          <StyledRevealSection>
+            <Projects />
+          </StyledRevealSection>
+          <StyledRevealSection>
+            <Education />
+          </StyledRevealSection>
+          <StyledRevealSection>
+            <Contact />
+          </StyledRevealSection>
         </Layout>
       </StyledMain>
       <Footer />

@@ -56,11 +56,11 @@ const StyledImageWrapper = styled.div`
 `;
 
 const Education = () => {
-  const { ref, inView } = useInView({ triggerOnce: true });
-  const className = inView ? 'fadeup-enter-active' : 'fadeup-enter';
+  // const { ref, inView } = useInView({ triggerOnce: true });
+  // const className = inView ? 'fadeup-enter-active' : 'fadeup-enter';
   return (
     <>
-      <StyledEducationSection id="education" ref={ref} className={className}>
+      <StyledEducationSection id="education">
         <StyledEducationInner>
           <StyledEducationPanel>
             <h2 className="section-heading">Education</h2>
