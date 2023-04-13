@@ -14,7 +14,8 @@ const StyledContent = styled.div`
     max-width: 500px;
   }
   @media only screen and (max-width: 600px) {
-    max-width: 400px;
+    max-width: 300px;
+    padding: 0;
     /* background: red; */
   }
   /* justify-content: center; */

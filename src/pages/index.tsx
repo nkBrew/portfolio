@@ -30,6 +30,10 @@ const StyledMain = styled.main<{ menuShowing: boolean }>`
     css`
       filter: blur(5px);
     `}
+
+  @media (max-width:600px) {
+    padding: 0 20px;
+  }
 `;
 
 export default function Home() {

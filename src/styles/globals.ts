@@ -167,6 +167,13 @@ const GlobalStyles = createGlobalStyle`
     }
     
   }
+
+  @media screen and (max-width:600px){
+    body {
+
+      font-size:20px;
+    }
+  }
  
 `;
 
