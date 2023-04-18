@@ -22,7 +22,7 @@ const NavLinks = ({ onClick }: NavLinkProps) => {
       </li>
       <li className="li-pdf">
         <a
-          href="/NicholasBrunoro_Resume.pdf"
+          href="/NicholasBrunoro_Resume2023.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
